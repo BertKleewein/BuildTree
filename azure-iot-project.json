@@ -1,0 +1,107 @@
+{
+  "libraries": {
+    "azure-iot-common": {
+      "path": "common/core",
+      "dependencies": []
+    },
+    "azure-iot-amqp-base": {
+      "path": "common/transport/amqp",
+      "dependencies": [
+        "azure-iot-common"
+      ]
+    },
+    "azure-iot-http-base": {
+      "path": "common/transport/http",
+      "dependencies": [
+        "azure-iot-common"
+      ]
+    },
+    "azure-iot-mqtt-base": {
+      "path": "common/transport/mqtt",
+      "dependencies": [
+        "azure-iot-common"
+      ]
+    },
+    "azure-iot-device": {
+      "path": "device/core",
+      "dependencies": [
+        "azure-iot-http-base",
+        "azure-iot-common"
+      ]
+    },
+    "azure-iothub": {
+      "path": "service",
+      "dependencies": [
+        "azure-iot-common",
+        "azure-iot-amqp-base",
+        "azure-iot-http-base"
+      ]
+    },
+    "azure-iot-device-amqp": {
+      "path": "device/transport/amqp",
+      "dependencies": [
+        "azure-iot-amqp-base",
+        "azure-iot-common",
+        "azure-iot-device",
+        "azure-iothub"
+      ]
+    },
+    "azure-iot-device-http": {
+      "path": "device/transport/http",
+      "dependencies": [
+        "azure-iot-http-base",
+        "azure-iot-common",
+        "azure-iot-device",
+        "azure-iothub"
+      ]
+    },
+    "azure-iot-device-mqtt": {
+      "path": "device/transport/mqtt",
+      "dependencies": [
+        "azure-iot-mqtt-base",
+        "azure-iot-common",
+        "azure-iot-device",
+        "azure-iothub"
+      ]
+    },
+    "azure-iot-e2etests": {
+      "path": "e2etests",
+      "dependencies": [
+        "azure-iot-common",
+        "azure-iot-device",
+        "azure-iot-device-amqp",
+        "azure-iot-device-http",
+        "azure-iot-device-mqtt",
+        "azure-iothub"
+      ]
+    },
+    "azure-device-provisioning-client": {
+      "path": "provisioning/device",
+      "dependencies": [
+        "azure-iot-common"
+      ]
+    },
+    "azure-iot-provisioning-http": {
+      "path": "provisioning/transport/http",
+      "dependencies": [
+        "azure-iot-http-base",
+        "azure-iot-common",
+        "azure-device-provisioning-client"
+      ]
+    },
+    "azure-iot-provisioning-mqtt": {
+      "path": "provisioning/transport/mqtt",
+      "dependencies": [
+        "azure-iot-mqtt-base",
+        "azure-iot-common",
+        "azure-device-provisioning-client"
+      ]
+    },
+    "iothub-buildtools": {
+      "path": "build/tools",
+      "dependencies": [
+        "azure-iothub"
+      ]
+    }
+  }
+}
